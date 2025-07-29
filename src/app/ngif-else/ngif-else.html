@@ -1,0 +1,8 @@
+<p *ngIf="isLoggedIn">welcome,user!</p>
+
+<div *ngIf="isLoggedIn; else loginBlock">welcome,user!</div>
+<ng-template #loginBlock>
+    <div>please login</div>
+</ng-template>
+
+<p appHighlight>This is paragraph will be highligthed</p>

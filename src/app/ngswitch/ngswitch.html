@@ -1,0 +1,7 @@
+<div [ngSwitch]="selectedColor">
+    <p *ngSwitchCase="'red'">Red</p>
+    <p *ngSwitchCase="'blue'">Blue</p>
+    <p *ngSwitchCase="'green'">Green</p>
+    <p *ngSwitchDefault>Default</p>
+</div>
+<input type="text" [ngModel]="selectedColor" />

@@ -1,0 +1,5 @@
+<div [style.backgroundColor]="'yellow'">This is yellow background</div>
+<div [style.fontSize.px]="100">Fixed width</div>
+<div [style.fontSize.px]="fontsize*10">Dynamic Width</div>
+<h2 [style.color]="hasError ? 'red' : 'green'">style binding</h2>
+<div [ngStyle]="{'background-color': 'orange', 'fontSize.px': fontsize*10}">Multiple styling</div>

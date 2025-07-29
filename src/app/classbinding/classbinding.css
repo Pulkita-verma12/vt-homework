@@ -1,0 +1,20 @@
+.text-blue{
+    color: rgb(82, 82, 229);
+}
+.active{
+    font-weight: bold;
+    color: red;
+}
+.highlight{
+    font-weight: bold;
+    color: green;
+}
+.error{
+    color: red;
+}
+.success{
+    color: green;
+}
+.hidden{
+    display: none;
+}

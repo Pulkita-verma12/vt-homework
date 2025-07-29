@@ -1,0 +1,5 @@
+<div [ngClass]="currentClass">Dyanmic class</div>
+<div [class.active]="isActive">Toggle class</div>
+<div [class.hidden]="isHidden">Hidden</div>
+<div [ngClass]="{'active': isActive,'highlight': isHighlighted,'error': isError}">Multiple classes</div>
+<div [class]="isError ? 'error' : 'success'">conditional class</div>
