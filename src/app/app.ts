@@ -16,6 +16,7 @@ import { Submit } from './submit/submit';
 import { Pipes } from './pipes/pipes';
 
 
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Register,Propertybinding,Classbinding,Stylebinding, EventBinding,TwoWayBinding,NgifElse,Ngswitch,Keyup,Keydown,Mouseover,Mouseleave,Submit,Pipes],

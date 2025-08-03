@@ -3,10 +3,11 @@ import { Component, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { OnInit } from '@angular/core';
 import { ReversePipe } from '../reverse.pipe';
+import { CapitalizePipe } from '../capitalise-pipe-pipe';
 
 @Component({
   selector: 'app-ngswitch',
-  imports: [CommonModule, FormsModule, ReversePipe],
+  imports: [CommonModule, FormsModule, ReversePipe,CapitalizePipe],
   templateUrl: './ngswitch.html',
   styleUrl: './ngswitch.css'
 })
