@@ -13,11 +13,12 @@ import { Keydown } from './keydown/keydown';
 import { Mouseover } from './mouseover/mouseover';
 import { Mouseleave } from './mouseleave/mouseleave';
 import { Submit } from './submit/submit';
+import { Pipes } from './pipes/pipes';
 
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Register,Propertybinding,Classbinding,Stylebinding, EventBinding,TwoWayBinding,NgifElse,Ngswitch,Keyup,Keydown,Mouseover,Mouseleave,Submit],
+  imports: [RouterOutlet, Register,Propertybinding,Classbinding,Stylebinding, EventBinding,TwoWayBinding,NgifElse,Ngswitch,Keyup,Keydown,Mouseover,Mouseleave,Submit,Pipes],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

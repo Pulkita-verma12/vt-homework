@@ -5,3 +5,11 @@
     <p *ngSwitchDefault>Default</p>
 </div>
 <input type="text" [ngModel]="selectedColor" />
+
+<ul>
+    <li *ngFor="let user of users">
+      {{ user.name }} ({{ user.email }})
+    </li>
+</ul>
+
+<p>{{ 'hello reverse' | reverse }}</p>
