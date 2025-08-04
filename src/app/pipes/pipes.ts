@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit } from '@angular/core';
 import { TruncateCustomePipe } from '../truncate-custome-pipe';
 import { CustompipelinePipe } from '../custompipeline-pipe';
 @Component({
@@ -8,7 +8,7 @@ import { CustompipelinePipe } from '../custompipeline-pipe';
   templateUrl: './pipes.html',
   styleUrl: './pipes.css'
 })
-export class Pipes {
+export class Pipes{
       name = 'Priyal Verma';
       message = 'yo i.m a custom pipe example for truncating';
       person = {

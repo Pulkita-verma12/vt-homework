@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, DoCheck, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { OnInit } from '@angular/core';
 import { ReversePipe } from '../reverse.pipe';
@@ -40,6 +40,11 @@ export class Ngswitch implements OnChanges, OnInit, DoCheck {
       }
     ];
     console.log('Data loaded: ', this.users);
+  }
+  @ViewChild('inputRef') inputElement!: ElementRef;
+  ngAfterViewInit(): void{
+    console.log('ngAfterViewInit called');
+    this.inputElement.nativeElement.focus();
   }
 }
 
