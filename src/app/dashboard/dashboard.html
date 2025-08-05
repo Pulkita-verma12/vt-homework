@@ -1,0 +1,96 @@
+<div class="dashboard-container">
+  <h2 class="dashboard-title">Product Dashboard</h2>
+  <p class="service-message">{{msg}}</p>
+  
+  <div class="dashboard-layout">
+    <!-- Left Side - Product List -->
+    <div class="product-list-container">
+      <h3>Product List</h3>
+      
+      <!-- Loading State -->
+      <div *ngIf="loading" class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading products...</p>
+      </div>
+      
+      <!-- Error State -->
+      <div *ngIf="error && !loading" class="error-state">
+        <div class="error-icon">⚠️</div>
+        <p>{{ error }}</p>
+        <button (click)="ngOnInit()" class="retry-button">Retry</button>
+      </div>
+      
+      <!-- Product List -->
+      <div *ngIf="!loading && !error" class="product-list">
+        <div *ngFor="let item of product" 
+             (click)="selectProduct(item)"
+             class="product-item"
+             [class.selected]="selectedProduct?.id === item.id">
+          <div class="product-preview">
+            <img class="product-thumbnail" [src]="item.image || ''" [alt]="item.title || 'Product'">
+            <div class="product-info">
+              <h4 class="product-title">{{ (item.title || '') | slice:0:40 }}{{ (item.title?.length || 0) > 40 ? '...' : '' }}</h4>
+              <p class="product-price">{{ (item.price || 0) | currency }}</p>
+              <div class="product-rating">
+                <span class="rating-stars">★ {{ item.rating?.rate || 0 }}</span>
+                <span class="rating-count">({{ item.rating?.count || 0 }})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Right Side - Product Details -->
+    <div class="product-details-container">
+      <h3>Product Details</h3>
+      <div *ngIf="selectedProduct; else noProductSelected" class="product-details">
+        <div class="product-image-section">
+          <img class="product-main-image" 
+               [src]="selectedProduct?.image || ''" 
+               [alt]="selectedProduct?.title || 'Product Image'">
+        </div>
+        
+        <div class="product-info-section">
+          <h2 class="detail-title">{{ selectedProduct?.title || 'No Title' }}</h2>
+          
+          <div class="info-row">
+            <span class="label">ID:</span>
+            <span class="value">{{ selectedProduct?.id || 'N/A' }}</span>
+          </div>
+          
+          <div class="info-row">
+            <span class="label">Price:</span>
+            <span class="value price-highlight">{{ (selectedProduct?.price || 0) | currency }}</span>
+          </div>
+          
+          <div class="info-row">
+            <span class="label">Category:</span>
+            <span class="value category-badge">{{ selectedProduct?.category || 'Unknown' }}</span>
+          </div>
+          
+          <div class="info-row">
+            <span class="label">Description:</span>
+            <p class="description">{{ selectedProduct?.description || 'No description available' }}</p>
+          </div>
+          
+          <div class="info-row">
+            <span class="label">Rating:</span>
+            <div class="rating-section">
+              <span class="rating-stars-large">★ {{ selectedProduct?.rating?.rate || 0 }}</span>
+              <span class="rating-text">({{ selectedProduct?.rating?.count || 0 }} reviews)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <ng-template #noProductSelected>
+        <div class="no-selection">
+          <div class="no-selection-icon">📦</div>
+          <h3>No Product Selected</h3>
+          <p>Select a product from the left panel to view its details</p>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

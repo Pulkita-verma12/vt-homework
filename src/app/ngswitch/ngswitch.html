@@ -18,3 +18,29 @@
 
 <h3>Focus input example</h3>
 <input #inputRef type="text" placeholder="Focus me automatically"/>
+
+<h3>{{msg}}</h3>
+
+<p>Product List:</p>
+<table>
+  <thead>
+    <tr>
+ <th class="text-center">id</th>
+    <th class="text-center">image</th>
+    <th class="text-center">title</th>
+    <th class="text-center">price</th>
+    <th class="text-center">rating (rate)</th>
+    <th class="text-center">rating (count)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of product">
+      <td class="text-center">{{ item.id }}</td>
+      <td ><img style="height: 50px;width: 50px;" src="{{item.image}}"></td>
+      <td class="text-center">{{ item.title }}</td>
+      <td class="text-center">{{ item.price | currency }}</td>
+      <td class="text-center">{{ item.rating?.rate }}</td>
+      <td class="text-center">{{ item.rating?.count }}</td>
+    </tr>
+  </tbody>
+</table>

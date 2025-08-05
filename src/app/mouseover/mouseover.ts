@@ -10,8 +10,10 @@ import { Component } from '@angular/core';
 export class Mouseover {
   message = 'Hover over the box!';
 
+
   onMouseOver() {
     this.message = 'Mouse is over!';
+    // this.msg = this.myservice.getMessage();
   }
 
   onMouseOut() {
